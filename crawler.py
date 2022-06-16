@@ -16,7 +16,7 @@ def find_data(url):
     soup = BeautifulSoup(response.text, 'html.parser')
     ean = soup.find('div', class_="product attribute content_technicalfact_3")
     price = soup.find('div', class_="price-box").find('span', class_='price')
-    ean = ean.text.ean.text.strip()[5:]
+    ean = ean.text.strip()[5:]
     price = price.text[:-2]
     return ean, price
 
